@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"github.com/SeyhZamani/dice-game-app/app/handler"
 	"github.com/go-chi/chi"
 	"log"
 	"net/http"
@@ -9,15 +10,13 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-	"dice-game-app/app/handler"
 )
-
 
 func main() {
 
 	router := chi.NewRouter()
 
-	router.Get("/match",handler.PostMatchHandler)
+	router.Get("/match", handler.PostMatchHandler)
 
 	server := &http.Server{
 		Addr:         ":8080",
